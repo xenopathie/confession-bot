@@ -3,11 +3,8 @@ from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 import asyncio
+from threading import Thread
 from keep_alive import keep_alive
-
-async def start_bot_and_flask():
-    
-    keep_alive()
 
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
@@ -81,10 +78,16 @@ async def on_ready():
     print(f"Commandes chargées: {list(bot.commands)}")
     await bot.tree.sync()
 
-print("Token OK, lancement du bot...")
-try:
-    bot.run(token=token)
-except Exception as e:
-    print(f"❌ Une erreur est survenue au lancement du bot : {e}")
+def start_flask():
+    keep_alive()
 
-asyncio.run(start_bot_and_flask())
+def start_bot():
+    bot.run(token=token)
+
+def start():
+    flask_thread = Thread(target=start_flask)
+    flask_thread.start()
+
+    start_bot()
+
+start()
