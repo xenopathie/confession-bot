@@ -1,1 +1,1 @@
-web: python confession.py
+worker: python confession.py
