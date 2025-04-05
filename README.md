@@ -18,11 +18,11 @@ Mise en ligne automatique avec Flask : Le bot est hébergé sur Render, avec Fla
 
 Python 3.8+
 
-    discord.py - Pour l'interaction avec l'API Discord.
+discord.py - Pour l'interaction avec l'API Discord.
 
-    Flask - Pour maintenir le bot en ligne.
+Flask - Pour maintenir le bot en ligne.
 
-    python-dotenv - Pour la gestion sécurisée des variables d'environnement.
+python-dotenv - Pour la gestion sécurisée des variables d'environnement.
 
 Installation
 # Clonez ce dépôt :
