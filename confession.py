@@ -5,7 +5,10 @@ from discord.ext import commands
 import asyncio
 from keep_alive import keep_alive
 
-keep_alive()
+async def start_bot_and_flask():
+    
+    keep_alive()
+
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 CONFESSION_CHANNEL_ID = 1267532294910902303
@@ -83,3 +86,5 @@ try:
     bot.run(token=token)
 except Exception as e:
     print(f"❌ Une erreur est survenue au lancement du bot : {e}")
+
+asyncio.run(start_bot_and_flask())
