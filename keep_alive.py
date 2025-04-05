@@ -11,7 +11,7 @@ def home():
 
 def run():
     print("Lancement du serveur Flask...")
-app.run(host='0.0.0.0', port=8081, debug=True)
+app.run(host='0.0.0.0', port=8081)
 
 def keep_alive():
     print("Lancement du serveur Flask sans thread...")
